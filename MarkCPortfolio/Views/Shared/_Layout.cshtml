@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MC Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Rubik:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="~/Template/css/styles-merged.css">
+    <link rel="stylesheet" href="~/Template/css/style.min.css">
+    <link rel="stylesheet" href="~/Template/css/custom.css">
+    <link rel="icon" type="image/png" href="~/Template/img/favicon.ico">
+    <link rel="stylesheet" href="~/Template/css/prism.css" />
+    <style>
+        .swal-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .goodPal {
+            background-color: green;
+            color: white;
+        }
+
+        .badPal {
+            background-color: rgb(90, 33, 0);
+            color: white;
+        }
+
+        .hidden-anchor {
+            position: absolute;
+            top: -95px;
+        }
+
+        .codeBtn {
+            padding: 3px !important;
+            margin-right: 5px;
+            background-color: #f4bd00;
+            font-weight: 300;
+        }
+
+        .number {
+            text-align: center;
+        }
+
+        .dropdown-menu a {
+            padding: 3px;
+        }
+
+        .image-wrap:hover {
+            cursor: pointer;
+        }
+
+        .coolBlue{
+            background: linear-gradient(18deg, rgba(22,28,46,1) 0%, rgba(24,34,60,1) 60%, rgba(29,49,101,1) 100%) !important;
+        }
+
+        .coolBlue2 {
+            background: linear-gradient(342deg, rgba(22,28,46,1) 0%, rgba(24,34,60,1) 60%, rgba(29,49,101,1) 100%) !important;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    </style>
+
+</head>
+<body>
+    @RenderBody()
+
+    <script src="~/Template/js/scripts.min.js"></script>
+    <script src="~/Template/js/main.min.js"></script>
+    <script src="~/Template/js/custom.js"></script>
+    <script src="~/Template/js/prism.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

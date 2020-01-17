@@ -1,0 +1,653 @@
+﻿    <!-- START: header -->
+<div class="probootstrap-loader"></div>
+
+<header role="banner" style="background-color: rgba(2, 4, 38, 1); position:fixed;" class="probootstrap-header">
+    <div class="container">
+        <a href="#home" class="probootstrap-logo">MC Hammer<span>.</span></a> @*Top Left Logo*@
+
+        <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
+        <div class="mobile-menu-overlay"></div>
+
+        <nav role="navigation" class="probootstrap-nav hidden-xs">
+            @*Navbar*@
+            <ul class="probootstrap-main-nav">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="caret"></span></a>
+                    <ul class="dropdown-menu" style="background-color: #020426">
+                        <li><a href="#fizzJump">FizzBuzz</a></li>
+                        <li><a href="#numJump">5 Numbers</a></li>
+                        <li><a href="#factoJump">Factorials</a></li>
+                        <li><a href="#palinJump">Palindrome</a></li>
+                        <li><a href="#sumOfJump">Sum of Fears</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>@*Navbar*@
+    </div>
+</header>
+<!-- END: header -->
+<div id="fizzModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- FizzBuzz Modal -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="btn btn-primary close codeBtn" onclick="showCode(fizzCode, this)">Show Code</button>
+                <div class="modal-title"><h4 style="margin: -10px auto 0px;">FizzBuzz!</h4><span>Enter two blanks to clear</span></div>
+            </div>
+            <div class="modal-body">
+                <div class="container" id="fizzBuzzChallenge">
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class=col-sm-4>Fizz</div>
+                            <input type="number" class="col-sm-8 col-xs-12" id="fizzer" />
+                        </div>
+                        <div class="row mt10">
+                            <div class=col-sm-4>Buzz</div>
+                            <input type="number" class="col-sm-8 col-xs-12" id="buzzer" />
+                        </div>
+                        <div class="row mt10">
+                            <button class="col-xs-12 btn btn-primary"
+                                    onclick="buzzIt(+fizzer.value, +buzzer.value)">
+                                BuzzIt!
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-9 jumbotron" id="buzzTron" style="margin-top: 20px;"></div>
+                    </div>
+                    <div class="row">
+                        <pre class="col-sm-9 col-xs-12 hidden" id="fizzCode"><code class="lang-javascript">
+let fizzer = document.querySelector('#fizzer');
+let buzzer = document.querySelector('#buzzer');
+
+function buzzIt(fizz, buzz) {
+    buzzTron.innerHTML = "";
+
+    if (fizz == "" && buzz == "") {
+        buzzTron.innerHTML = '';
+    } else {
+        for (let i = 1; i < 103; i++) {
+            if (i % fizz == 0 && i % buzz == 0) {
+                buzzTron.innerHTML = buzzTron.innerHTML + "<span class="bg-success col-md-2 col-xs-6 fizzbuzz">FizzBuzz</span>";
+            } else if (i % fizz == 0) {
+                buzzTron.innerHTML = buzzTron.innerHTML + "<span class="bg-info col-md-2 col-xs-6 fizz">Fizz</span>";
+            } else if (i % buzz == 0) {
+                buzzTron.innerHTML = buzzTron.innerHTML + "<span class="bg-warning col-md-2 col-xs-6 buzz">Buzz</span>";
+            } else {
+                buzzTron.innerHTML = buzzTron.innerHTML + "<span class="col-md-2 col-xs-6">${i}</span>";
+            }
+        }
+    }
+}
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>@*FizzBuzz Modal*@
+<div id="numModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="btn btn-primary close codeBtn" onclick="showCode(numberCode, this)">Show Code</button>
+                <h4 class="modal-title">Five Number Challenge!</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container" id="numberChallenge">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <span class="col-sm-6 col-sm-offset-1">Number 1</span><input type="number" id="Num1" value="1" class="col-sm-4 col-xs-12 number" />
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-6 col-sm-offset-1">Number 2</span><input type="number" id="Num2" class="col-sm-4 col-xs-12 order-sm-first number" value="2" />
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-6 col-sm-offset-1">Number 3</span><input type="number" id="Num3" class="col-sm-4 col-xs-12 order-sm-first number" value="3" />
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-6 col-sm-offset-1">Number 4</span><input type="number" id="Num4" class="col-sm-4 col-xs-12 order-sm-first number" value="4" />
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-6 col-sm-offset-1">Number 5</span><input type="number" id="Num5" class="col-sm-4 col-xs-12 order-sm-first number" value="5" />
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-primary col-xs-12 mt10" onclick="goGoGo()">GoGoGo!</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 col-sm-offset-1 col-xs-12">
+                            <div class="row mt10">
+                                <span class="col-sm-4 col-xs-8">Least</span>
+                                <div class="col-sm-2 col-xs-4" id="smallestNum">Place</div>
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-4 col-xs-8">Most</span>
+                                <div class="col-sm-2 col-xs-4" id="largestNums">Place</div>
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-4 col-xs-8">Average</span>
+                                <div class="col-sm-2 col-xs-4" id="averageAll">Place</div>
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-4 col-xs-8">Total</span>
+                                <div class="col-sm-2 col-xs-4" id="totalAll">Place</div>
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-4 col-xs-8">Product</span>
+                                <div class="col-sm-2 col-xs-4" id="multiAll">Place</div>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-primary col-xs-12 col-sm-6 mt30" onclick="clearBoxes()">Clear Inputs</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <pre class="col-sm-12 col-xs-12 hidden" id="numberCode"><code class="lang-javascript">
+var fiveNums = [];
+let total = 0;
+let indexNums = document.querySelectorAll('.number')
+
+function goGoGo(){
+    fiveNums = [];
+
+    for(let i = 0; i < 5; i++){
+        if(indexNums[i].value != '') {fiveNums[i] = +indexNums[i].value;}
+    }
+
+    if (fiveNums.length != 0) updateNums();
+}
+
+function clearBoxes() {
+    indexNums.forEach((a) => a.value = "");
+}
+
+function smallest(){
+    return Math.min(...fiveNums);
+}
+
+function largestNum(){
+    return Math.max(...fiveNums);
+}
+
+function addTotal(){
+    total = 0;
+    for (let i = 0; i < fiveNums.length; i++) {
+        total = total + fiveNums[i];
+    }
+    return total;
+}
+
+function averageTotal(){
+    return total / fiveNums.length;
+}
+
+function multiplyNums(){
+    let productNums = 1;
+    for (let i = 0; i < fiveNums.length; i++){
+        productNums = productNums * fiveNums[i]
+    }
+    return productNums;
+}
+
+function updateNums(){
+    smallestNum.textContent = smallest();
+    largestNums.textContent = largestNum();
+    totalAll.textContent = addTotal();
+    averageAll.textContent = averageTotal();
+    multiAll.textContent = multiplyNums();
+}
+</code></pre>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>@*Five Numbers Modal*@
+<div id="factorModal" class="modal fade" role="dialog">
+    @*Factorial Modal*@
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="btn btn-primary close codeBtn" onclick="showCode(factorialCode, this)">Show Code</button>
+                <h4 class="modal-title">Factorial</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container" id="factorialChallenge">
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="row">
+                                <input type="number" class="col-xs-12" id="factorialNum" />
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-warning col-xs-12 mt10 mb10" onclick="factorize()">Factorial that Thing!</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-sm-offset-1 col-xs-12 mt10 well" id="factorOutput" style="text-align:center; font-weight: 800; color: black;">Your Result Shows Here!</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <pre class="col-sm-12 col-xs-12 hidden" id="factorialCode"><code class="lang-javascript">
+let totalFactor;
+
+function factorize(){
+    let factorialNum = document.querySelector('#factorialNum').value;
+    totalFactor = 1;
+    if (+factorialNum < 0 || factorialNum == '' || factorialNum > 170) {
+        swal("Put in a valid number!", "A number between 1 - 170", "error", { button: "Agree to the Terms & Conditions",});
+    } else {
+        for(let i = 0; i < factorialNum; i++) {
+        totalFactor = totalFactor * (i+1);
+    }
+    factorOutput.textContent = totalFactor;
+    }
+}
+</code></pre>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>@*Factorial Modal*@
+<div id="palinModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="btn btn-primary close codeBtn" onclick="showCode(palindromeCode, this)">Show Code</button>
+                <h4 class="modal-title">Palindrome</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container" id="palindromeChallenge">
+                    <div class="row">
+                        <div class="col-sm-9 col-xs-12">
+                            <div class="col-sm-4 col-xs-12">Enter A Palindrome:</div>
+                            <input type="text" class="col-sm-8 col-xs-12 mb10" id="palindromeText" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9 col-xs-12">
+                            <button class="btn btn-block btn-primary" onclick="palinGo()">
+                                Spin... That... Wheel!
+                                (Palindrome)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="well col-sm-9 col-xs-12 text-center mt10" id="palinResult"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <pre class="col-sm-12 col-xs-12 hidden" id="palindromeCode"><code class="lang-javascript">
+function palinGo() {
+let reverse = [];
+
+let palinArr = palindromeText.value
+                .toLowerCase()
+                .match(/[a-z]/gi);
+
+let palinCopy = [...palinArr];
+
+for (let i = 0; i < palinArr.length; i++) {
+    reverse[i] = palinCopy.pop();
+}
+if(reverse.join('') == palinArr.join('')) {
+    palinResult.textContent = "Holy smokes that is quite a palindrome you have";
+    palinResult.classList.add('goodPal');
+    palinResult.classList.remove('badPal');
+    } else {
+    palinResult.textContent = "Ahh poop that ain't a palindrome";
+    palinResult.classList.add('badPal');
+    palinResult.classList.remove('goodPal');
+    }
+}
+</code></pre>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>@*Palindrome Modal*@
+<div id="sumOfAllModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="btn btn-primary close codeBtn" onclick="showCode(sumOfCode, this)">Show Code</button>
+                <h4 class="modal-title">Sum of All Fears Challenge!</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container" id="numberChallenge">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="row">
+                                <span class="col-sm-6 col-sm-offset-1">Number</span><input type="number" value="1" class="col-sm-4 col-xs-12 numberF" />
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-6 col-sm-offset-1">Number</span><input type="number" class="col-sm-4 col-xs-12 order-sm-first numberF" value="2" />
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-6 col-sm-offset-1">Number</span><input type="number" class="col-sm-4 col-xs-12 order-sm-first numberF" value="3" />
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-6 col-sm-offset-1">Number</span><input type="number" class="col-sm-4 col-xs-12 order-sm-first numberF" value="4" />
+                            </div>
+                            <div class="row">
+                                <span class="col-sm-6 col-sm-offset-1">Number</span><input type="number" class="col-sm-4 col-xs-12 order-sm-first numberF" value="5" />
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-primary col-xs-12 mt10" onclick="sumOfAll(+fearNum.value)">Ah! Spiders!</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 col-sm-offset-1 col-xs-12">
+                            <div class="row">
+                                <span class="col-sm-3">Target Number</span><input type="number" id="fearNum" class="col-sm-4 col-xs-12" value="5" />
+                            </div>
+                            <div class="row mt10">
+                                <div class="col-xs-8 well-lg" style="text-align: center">
+                                    <h3 id="sumOfAllRes">Hello</h3><div id="matches"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <pre class="col-sm-12 col-xs-12 hidden" id="sumOfCode"><code class="lang-javascript">
+let testArr = document.querySelectorAll('.numberF');
+
+
+function sumOfAll(k) {
+    matches.innerHTML = "";
+    let matchedUp = false;
+    let winnerBox = [];
+    let checkedNum;
+    let finalArr = [];
+    let desResult;
+
+    for(let i = 0; i < 5; i++){
+        if (testArr[i].value != '') { finalArr[i] = +testArr[i].value; } //Validator
+    }
+
+    for (let i = 0; i < finalArr.length; i++) {
+        desResult = k - finalArr[i];
+        checkedNum = finalArr.indexOf(desResult, i + 1);
+        if (checkedNum != -1 && matchedUp != true) { //First Time Match
+            matchedUp = true;
+            matches.innerHTML += `<p style="margin-bottom: -24px;">${finalArr[i]} and ${desResult} Matched!<p>`;
+            winnerBox.push(finalArr[i], desResult);
+        } else if (checkedNum != -1 && !winnerBox.includes(desResult)) { //Checks Remaining Matches for Duplicate
+            matches.innerHTML += `<p style="margin-bottom: -24px;">${finalArr[i]} and ${desResult} Matched!<p>`;
+            winnerBox.push(finalArr[i], desResult);
+        }
+    }
+    if (matchedUp == true) {
+        sumOfAllRes.innerHTML = `You Beat Your Fears`;
+    } else {
+        sumOfAllRes.innerHTML = `Your Fears Won <p style="margin-bottom: -24px;">(No Match)</p>`;
+    }
+}
+</code></pre>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>@*Sum of All Modal*@
+
+<a id="home"></a>
+<div class="probootstrap-main-content">
+    <section class="probootstrap-slider flexslider">
+        @*Slider*@
+        <ul class="slides">
+            <!-- class="overlay" -->
+            <li style="background-image: url(/Template/img/Space_Slider.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="probootstrap-slider-text text-center">
+                                <h1 class="probootstrap-heading probootstrap-animate mb20 smallify">Mark Corum's Portfolio</h1>
+                                @*<div class="probootstrap-animate probootstrap-sub-wrap mb30" style="background-color: rgba(0, 0, 0, 0.15); text-shadow: 0px 1px 4px white;">Welcome to my Coder Foundry Projects!</div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </section> @*Slider*@
+    <a id="about"></a><section class="probootstrap-section probootstrap-bg-white">
+        @*About Me*@
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 probootstrap-animate">
+                    <div class="col-md-4">
+                        <img src="~/Template/img/ProfilePic.jpg" alt="Me. Mark Corum" class="mt100 img-thumbnail" />
+                    </div>
+                    <div class="col-md-8">
+                        <h2>About Me</h2>
+                        <p>Hello there, and welcome to my portfolio! My name is Mark Corum and I am a 24 year old accountant turned programmer. I am also a bit of a board game nerd who ran my own board game blog with my girlfriend a few years ago while getting my Bachelor's in Accounting. To this day I make time at least once a week (sometimes more) to play GloomHaven with my family and girlfriend of 8 years!</p>
+                    </div>
+                </div>
+            </div>@*About Me*@
+            <!-- END row -->
+        </div>
+    </section>@*About Me*@
+    <div class="row" style="background-color: #1b2c57; padding: 20px;">
+        <div class="container">
+            <button class="btn btn-primary btn-outline-success  col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4" style="padding: 10px 20px !important"><h3 class="mb0 mt0">Résumé</h3></button>
+        </div>
+        </div>@*Resume*@
+    <section class="probootstrap-section probootstrap-bg-white">
+        <a id="portfolio" class="hidden-anchor"></a>
+        <div class="container-fluid">
+            <div class="section-heading text-center">
+                <h2 class="mt0 mb0">Explore Some of My Projects!</h2>
+            </div>
+        </div>
+    </section> @*Explore Banner*@
+
+    <section class="probootstrap-half" style="position:relative;">
+        <a id="fizzJump" class="hidden-anchor"></a>
+        <div class="image-wrap">
+            <a data-toggle="modal" data-target="#fizzModal"><div class="image" style="background-image: url(/Template/img/FizzBuzz.jpg);"></div></a>
+        </div>
+        <div class="text coolBlue">
+            <h3 class="mt0 mb40">FizzBuzz Coding Challenge</h3>
+            <p>A famous challenge that prints the numbers from 1 to 100. But for multiples of the first number print “Fizz” instead of the number and for the multiples of the second number “Buzz”. For numbers which are multiples of both, print “FizzBuzz".</p>
+            <p><a href="#" data-toggle="modal" data-target="#fizzModal" class="btn btn-ghost btn-ghost-white col-xs-12 mb10">Start Fizzing</a></p>
+        </div>
+    </section>@*FizzBuzz Site Area*@
+    <section class="probootstrap-half reverse" style="position:relative;">
+        @*5 Numbers Section*@
+        <a id="numJump" class="hidden-anchor"></a>
+        <div class="image-wrap">
+            <a data-toggle="modal" data-target="#numModal"><div class="image" style="background-image: url(/Template/img/Calculator.jpg);"></div></a>
+        </div>
+        <div class="text coolBlue2" style="position:relative;">
+            <h3 class="mt0 mb40">Five Numbers Challenge</h3>
+            <p class="mb50">The bomb timer is counting down. The last step to defuse it is to calculate the Smallest, Largest, Total, Average, and Product of 5 numbers. I guess you're lucky I built this tool.</p>
+            <p><a href="#" class="btn btn-ghost btn-ghost-white mb10 col-xs-12" data-toggle="modal" data-target="#numModal">Number Time!</a></p>
+        </div>
+    </section>@*5 Numbers Site Area*@
+    <section class="probootstrap-half" style="position:relative;">
+        @*Factorial*@
+        <a id="factoJump" class="hidden-anchor"></a>
+        <div class="image-wrap">
+            <a data-toggle="modal" data-target="#factorModal"><div class="image" style="background-image: url(/Template/img/Factorial.jpg);"></div></a>
+        </div>
+        <div class="text coolBlue">
+            <h3 class="mt0 mb40">Factorial</h3>
+            <p class="mb50">Ever wondered "What happens if I multiplied a number by every number that came before it?" I know, I know. The thought is super exciting. Well here is a little doo-dad that will calculate that for you.</p>
+            <p><a href="#" class="btn btn-ghost btn-ghost-white mb10 col-xs-12" data-toggle="modal" data-target="#factorModal">Factorialize</a></p>
+        </div>
+    </section>@*Factorial Site Area*@
+    <section class="probootstrap-half reverse" style="position:relative;">
+        @*Palindrome Section*@
+        <a id="palinJump" class="hidden-anchor"></a>
+        <div class="image-wrap">
+            <a data-toggle="modal" data-target="#palinModal"><div class="image" style="background-image: url(/Template/img/Palindrome.jpg);"></div></a>
+        </div>
+        <div class="text coolBlue2">
+            <h3 class="mt0 mb40">Palindrome Challenge</h3>
+            <p class="mb50">You walk around on the street and see a cat eating a taco. Your friend says "Look! A tacocat!" As a man of culture, you say "That's a palindrome," but your friend doesn't believe you. Show them this application to prove it.</p>
+            <p><a href="#" class="btn btn-ghost btn-ghost-white mb10 col-xs-12" data-toggle="modal" data-target="#palinModal">Palindrome!</a></p>
+        </div>
+    </section>@*Palindrome Site Area*@
+    <section class="probootstrap-half" style="position:relative;">
+        @*Sum of All*@
+        <a id="sumOfJump" class="hidden-anchor"></a>
+        <div class="image-wrap">
+            <a data-toggle="modal" data-target="#sumOfAllModal"><div class="image" style="background-image: url('/Template/img/Sum of All Fears.jpg');"></div></a>
+        </div>
+        <div class="text coolBlue">
+            <h3 class="mt0 mb40">Sum of All Fears</h3>
+            <p class="mb50">One Target Number. Large Array. One Question. Will any numbers in the array add up to the target number?</p>
+            <p><a href="#" class="btn btn-ghost btn-ghost-white mb10 col-xs-12" data-toggle="modal" data-target="#sumOfAllModal">Face Your Fears</a></p>
+        </div>
+    </section>@*Sum of All Fears Site Area*@
+</div>
+<section class="probootstrap-section probootstrap-bg-white" style="position: relative;">
+    <a id="resume" class="hidden-anchor"></a>
+    <section class="probootstrap-section probootstrap-bg-white" style="background-color: #f4bd00">
+        @*Contact*@
+        <a id="contact" class="hidden-anchor"></a>
+        <div class="container-fluid">
+            <div class="section-heading text-center">
+                <h2 class="text-center mt0">Contact</h2>
+                <form href="mailto:wivaw11120@oncloud.ws" subject="Testing This Out">
+                    <div class="row">
+                        <div class="row">
+                            <div class="form-group col-xs-4 col-xs-offset-1 col-sm-3 col-sm-offset-3">
+                                <label for="formInputName">Name</label>
+                                <input type="text" class="form-control" id="formInputName" placeholder="John Doe">
+                            </div>
+                            <div class="form-group col-xs-6 col-sm-3">
+                                <label for="formEmail">Email address</label>
+                                <input type="email" class="form-control" id="formEmail" placeholder="name@example.com">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-10 col-xs-offset-1 col-sm-offset-3 col-sm-6">
+                        <label for="contactCompany">Company</label>
+                        <input class="form-control" id="contactCompany" type="text" placeholder="Your Awesome Company Inc.">
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-10 col-xs-offset-1 col-sm-offset-3 col-sm-6">
+                            <label for="contactMessageBox">Please Leave a Message!</label>
+                            <textarea class="form-control" id="contactMessageBox" rows="4" style="resize: none" placeholder="Mr. Corum. You are clearly the most magnificient and handsome potential hire we have ever seen. We'd like to offer you $1 million dollars a month."></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-black" type="submit">Send a Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section> @*Contact*@
+
+</section>
+
+<div class="probootstrap-footer-spacer"></div>
+<footer class="probootstrap-footer" style="height: 18em;">
+    <div class="probootstrap-footer-section" style="padding-bottom: 11px; background: #161C2E;">
+        <div class="container">
+            <div class="row mb20">
+                <div class="col-md-6">
+                    <div class="probootstrap-footer-widget">
+                        <h3>About Me</h3>
+                        <p>My name is Mark Corum and I am a 24 year old accountant turned programmer.</p><p>Contact Me At: Markjcorum@gmail.com</p>
+                        <p><a href="#about" class="btn btn-ghost btn-ghost-white btn-sm">See More About</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="probootstrap-link-wrap probootstrap-footer-widget">
+                        <h3>Links</h3>
+                        <ul>
+                            <li><a href="#home">Back to Top</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            @*<li><a href="#resume">Resume (Coming Soon)</a></li>*@
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="~/Template/js/numbers.js"></script>
+<script src="~/Template/js/factorials.js"></script>
+<script src="~/Template/js/fizzBuzz.js"></script>
+<script src="~/Template/js/palindrome.js"></script>
+<script src="//unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    function showCode(uniqueId, btnIdText) {
+        uniqueId.classList.toggle('hidden');
+        btnIdText.textContent == "Show Code" ? btnIdText.textContent = "Close Code" : btnIdText.textContent = "Show Code";
+    }
+</script>
+<script>
+    let testArr = document.querySelectorAll('.numberF');
+
+    function sumOfAll(k) {
+        matches.innerHTML = "";
+        let matchedUp = false;
+        let winnerBox = [];
+        let desResult;
+        let checkedNum;
+        let finalArr = [];
+
+    for(let i = 0; i < 5; i++){
+        if (testArr[i].value != '') { finalArr[i] = +testArr[i].value; }
+       }
+
+        for (let i = 0; i < finalArr.length; i++) {
+            desResult = k - finalArr[i];
+            checkedNum = finalArr.indexOf(desResult, i + 1);
+            if (checkedNum != -1 && matchedUp != true) {
+                matchedUp = true;
+                matches.innerHTML += `<p style="margin-bottom: -24px;">${finalArr[i]} and ${desResult} Matched!<p>`;
+                winnerBox.push(finalArr[i], desResult);
+            } else if (checkedNum != -1 && !winnerBox.includes(desResult)) {
+                matches.innerHTML += `<p style="margin-bottom: -24px;">${finalArr[i]} and ${desResult} Matched!<p>`;
+                winnerBox.push(finalArr[i], desResult);
+            }
+        }
+        if (matchedUp == true) {
+            sumOfAllRes.innerHTML = `You Beat Your Fears`;
+        } else {
+            sumOfAllRes.innerHTML = `Your Fears Won <p style="margin-bottom: -24px;">(No Match)</p>`;
+        }
+        }
+</script>
