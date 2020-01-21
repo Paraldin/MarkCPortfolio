@@ -3,7 +3,7 @@
 
 <header role="banner" style="background-color: rgba(2, 4, 38, 1); position:fixed;" class="probootstrap-header">
     <div class="container">
-        <a href="#home" class="probootstrap-logo">MC Hammer<span>.</span></a> @*Top Left Logo*@
+        <a href="#home" class="probootstrap-logo">MC Portfolio<span>.</span></a> @*Top Left Logo*@
 
         <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
         <div class="mobile-menu-overlay"></div>
@@ -302,7 +302,7 @@ function factorize(){
                 <div class="row">
                     <pre class="col-sm-12 col-xs-12 hidden" id="palindromeCode"><code class="lang-javascript">
 function palinGo() {
-let reverse = [];
+let unoReverseCard = [];
 
 let palinArr = palindromeText.value
                 .toLowerCase()
@@ -311,9 +311,9 @@ let palinArr = palindromeText.value
 let palinCopy = [...palinArr];
 
 for (let i = 0; i < palinArr.length; i++) {
-    reverse[i] = palinCopy.pop();
+    unoReverseCard[i] = palinCopy.pop();
 }
-if(reverse.join('') == palinArr.join('')) {
+if(unoReverseCard.join('') == palinArr.join('')) {
     palinResult.textContent = "Holy smokes that is quite a palindrome you have";
     palinResult.classList.add('goodPal');
     palinResult.classList.remove('badPal');
@@ -454,18 +454,31 @@ function sumOfAll(k) {
                     </div>
                     <div class="col-md-8">
                         <h2>About Me</h2>
-                        <p>Hello there, and welcome to my portfolio! My name is Mark Corum and I am a 24 year old accountant turned programmer. I am also a bit of a board game nerd who ran my own board game blog with my girlfriend a few years ago while getting my Bachelor's in Accounting. To this day I make time at least once a week (sometimes more) to play GloomHaven with my family and girlfriend of 8 years!</p>
+                        <p style="color:rgb(2, 4, 38);">Hello there, and welcome to my portfolio! My name is Mark Corum and I am a 24 year old accountant turned programmer. I am also a bit of a board game nerd who ran my own board game blog with my girlfriend a few years ago while getting my Bachelor's in Accounting. To this day I make time at least once a week (sometimes more) to play GloomHaven with my family and girlfriend of 8 years!</p>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <span style="font-size:2rem;">Skills:</span>
+                                <i class="fab fa-css3-alt fa-3x" style="color:dodgerblue;"></i>
+                                <i class="fab fa-html5 fa-3x" style="color:orangered;"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                     width="52" height="52"
+                                     viewBox="0 0 226 226"
+                                     style=" fill:#000000;">
+                                <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g><path d="M107.83496,15.47158c3.19696,-1.79387 7.13313,-1.79387 10.32538,0c15.79646,8.86579 63.33179,35.55262 79.13296,44.41842c3.19696,1.78917 5.16504,5.10383 5.16504,8.69158c0,17.73158 0,71.10054 0,88.83212c0,3.58775 -1.96808,6.90242 -5.16504,8.69629c-15.79646,8.86579 -63.33179,35.55263 -79.13296,44.41842c-3.19696,1.79387 -7.13313,1.79387 -10.32538,0c-15.79646,-8.86579 -63.33179,-35.55263 -79.13296,-44.41842c-3.19225,-1.79387 -5.16033,-5.10383 -5.16033,-8.69158c0,-17.73158 0,-71.10054 0,-88.83212c0,-3.58775 1.96808,-6.90242 5.16504,-8.69629c15.79175,-8.86579 63.3365,-35.55262 79.12825,-44.41842z" fill="#40107f"></path><path d="M24.973,161.9855c-1.25242,-1.67617 -1.43133,-3.26758 -1.43133,-5.40987c0,-17.628 0,-70.69092 0,-88.32362c0,-3.56892 1.96337,-6.86475 5.15092,-8.6445c15.73996,-8.814 63.11521,-35.34546 78.85517,-44.16417c3.18754,-1.78446 7.50508,-1.74679 10.69262,0.03767c15.73996,8.814 62.95513,35.11946 78.69508,43.93346c1.27125,0.71567 2.24117,1.57729 3.1075,2.712z" fill="#67429a"></path><path d="M113,47.08333c-36.39542,0 -65.91667,29.52125 -65.91667,65.91667c0,36.39542 29.52125,65.91667 65.91667,65.91667c36.39542,0 65.91667,-29.52125 65.91667,-65.91667c0,-36.39542 -29.52125,-65.91667 -65.91667,-65.91667zM113,145.95833c-18.17417,0 -32.95833,-14.78417 -32.95833,-32.95833c0,-18.17417 14.78417,-32.95833 32.95833,-32.95833c18.17417,0 32.95833,14.78417 32.95833,32.95833c0,18.17417 -14.78417,32.95833 -32.95833,32.95833z" fill="#ffffff"></path><path d="M200.03354,62.17354c2.4295,2.27412 2.38242,5.70179 2.38242,8.39967c0,17.86812 -0.15067,68.68988 0.04237,86.558c0.01883,1.8645 -0.59796,3.82788 -1.52079,5.30629l-89.85383,-49.4375z" fill="#491c7b"></path><path d="M160.08333,94.16667h4.70833v37.66667h-4.70833zM174.20833,94.16667h4.70833v37.66667h-4.70833z" fill="#ffffff"></path><path d="M150.66667,117.70833h37.66667v4.70833h-37.66667zM150.66667,103.58333h37.66667v4.70833h-37.66667z" fill="#ffffff"></path></g></g></svg>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>@*About Me*@
             <!-- END row -->
         </div>
     </section>@*About Me*@
-    <div class="row" style="background-color: #1b2c57; padding: 20px;">
+    <div class="row" style="background: radial-gradient(circle, rgba(22,28,46,1) 2%, rgba(28,39,68,1) 77%, rgba(29,49,101,1) 98%); padding: 20px;">
         <div class="container">
             <button class="btn btn-primary btn-outline-success  col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4" style="padding: 10px 20px !important"><h3 class="mb0 mt0">Résumé</h3></button>
         </div>
-        </div>@*Resume*@
+    </div>@*Resume*@
     <section class="probootstrap-section probootstrap-bg-white">
         <a id="portfolio" class="hidden-anchor"></a>
         <div class="container-fluid">
@@ -547,23 +560,23 @@ function sumOfAll(k) {
                     <div class="row">
                         <div class="row">
                             <div class="form-group col-xs-4 col-xs-offset-1 col-sm-3 col-sm-offset-3">
-                                <label for="formInputName">Name</label>
+                                <label for="formInputName" class="contact-contrast">Name</label>
                                 <input type="text" class="form-control" id="formInputName" placeholder="John Doe">
                             </div>
                             <div class="form-group col-xs-6 col-sm-3">
-                                <label for="formEmail">Email address</label>
+                                <label for="formEmail" class="contact-contrast">Email address</label>
                                 <input type="email" class="form-control" id="formEmail" placeholder="name@example.com">
                             </div>
                         </div>
                     </div>
                     <div class="form-group col-xs-10 col-xs-offset-1 col-sm-offset-3 col-sm-6">
-                        <label for="contactCompany">Company</label>
+                        <label for="contactCompany" class="contact-contrast">Company</label>
                         <input class="form-control" id="contactCompany" type="text" placeholder="Your Awesome Company Inc.">
 
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-10 col-xs-offset-1 col-sm-offset-3 col-sm-6">
-                            <label for="contactMessageBox">Please Leave a Message!</label>
+                            <label for="contactMessageBox" class="contact-contrast">Please Leave a Message!</label>
                             <textarea class="form-control" id="contactMessageBox" rows="4" style="resize: none" placeholder="Mr. Corum. You are clearly the most magnificient and handsome potential hire we have ever seen. We'd like to offer you $1 million dollars a month."></textarea>
                         </div>
                     </div>
@@ -611,12 +624,14 @@ function sumOfAll(k) {
 <script src="~/Template/js/fizzBuzz.js"></script>
 <script src="~/Template/js/palindrome.js"></script>
 <script src="//unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@* Show Code Toggle Button *@
 <script>
     function showCode(uniqueId, btnIdText) {
         uniqueId.classList.toggle('hidden');
         btnIdText.textContent == "Show Code" ? btnIdText.textContent = "Close Code" : btnIdText.textContent = "Show Code";
     }
 </script>
+@* Sum of All Fears JavaScript *@
 <script>
     let testArr = document.querySelectorAll('.numberF');
 
@@ -628,9 +643,9 @@ function sumOfAll(k) {
         let checkedNum;
         let finalArr = [];
 
-    for(let i = 0; i < 5; i++){
-        if (testArr[i].value != '') { finalArr[i] = +testArr[i].value; }
-       }
+        for (let i = 0; i < 5; i++) {
+            if (testArr[i].value != '') { finalArr[i] = +testArr[i].value; }
+        }
 
         for (let i = 0; i < finalArr.length; i++) {
             desResult = k - finalArr[i];
@@ -649,5 +664,5 @@ function sumOfAll(k) {
         } else {
             sumOfAllRes.innerHTML = `Your Fears Won <p style="margin-bottom: -24px;">(No Match)</p>`;
         }
-        }
+    }
 </script>
